@@ -13,6 +13,7 @@ public class Server {
             Socket s = ss.accept();
             GestioneClient gs = new GestioneClient(s);
             gs.start();
+            
 
         } while (true);
     }

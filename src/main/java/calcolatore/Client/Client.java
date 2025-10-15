@@ -8,11 +8,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-
 public class Client {
     public static void main(String[] args) throws UnknownHostException, IOException {
-        System.out.println("Hello world!");
-        
+
         Socket s = new Socket("localhost", 3000);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -20,26 +18,28 @@ public class Client {
 
         Scanner tastiera = new Scanner(System.in);
 
-        do{
+        do {
 
             System.out.println("Inserire il primo numero: ");
             String primoNum = tastiera.nextLine();
             out.println(primoNum);
 
-            if(primoNum.equals("69")){out.println("!");break;}
+            if (primoNum.equals("!")) {
+                out.println("!");
+                break;
+            }
 
             System.out.println("Inserire il secondo numero: ");
             String secondoNum = tastiera.nextLine();
             out.println(secondoNum);
 
-            System.out.println("Inserire l'operatore:");
+            System.out.println("Inserire l'operatore: (1 => somma, 2 => sottrazione, 3 => moltiplicazione, 4 => divisione, ! => esci)");
             String operatore = tastiera.nextLine();
             out.println(operatore);
 
+            String stringClient = in.readLine();
+            System.out.println("Risultato => " + stringClient);
 
-        String stringClient = in.readLine();
-        System.out.println("Risultato => " + stringClient);
-
-    }while(true);
+        } while (true);
     }
 }
