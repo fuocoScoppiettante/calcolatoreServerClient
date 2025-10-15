@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class Client {
-    public static void main(String[] args) throws UnknownHostException, IOException {
+    public static void main(String[] args) throws IOException {
 
         Socket s = new Socket("localhost", 3000);
 
@@ -20,7 +19,7 @@ public class Client {
 
         do {
 
-            System.out.println("Inserire il primo numero: ");
+            System.out.println("Inserire il primo numero o ! per uscire: ");
             String primoNum = tastiera.nextLine();
             out.println(primoNum);
 
@@ -29,7 +28,7 @@ public class Client {
                 break;
             }
 
-            System.out.println("Inserire il secondo numero: ");
+            System.out.println("Inserire il secondo numero o ! per uscire: ");
             String secondoNum = tastiera.nextLine();
             out.println(secondoNum);
 

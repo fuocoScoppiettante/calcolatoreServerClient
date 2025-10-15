@@ -20,31 +20,31 @@ public class GestioneClient extends Thread {
 
             do {
 
-                String primoNum = in.readLine();
+                Integer primoNum = Integer.parseInt(in.readLine());
 
                 if (primoNum.equals("!")) {
                     break;
                 }
 
-                String secondoNum = in.readLine();
+                Integer secondoNum = Integer.parseInt(in.readLine());
                 String operatore = in.readLine();
 
-                if (secondoNum.equals("0") && operatore.equals(4)) {
+                if (secondoNum.equals("0") && operatore.equals("4")) {
                     out.println("Error!");
                     break;
                 }
 
-                if (operatore.equals(1)) {
-                    int somma = Integer.parseInt(primoNum) + Integer.parseInt(secondoNum);
+                if (operatore.equals("1")) {
+                    int somma = primoNum + secondoNum;
                     out.println(somma);
-                } else if (operatore.equals(2)) {
-                    int sottrazione = Integer.parseInt(primoNum) - Integer.parseInt(secondoNum);
+                } else if (operatore.equals("2")) {
+                    int sottrazione = primoNum - secondoNum;
                     out.println(sottrazione);
-                } else if (operatore.equals(3)) {
-                    int moltiplicazione = Integer.parseInt(primoNum) * Integer.parseInt(secondoNum);
+                } else if (operatore.equals("3")) {
+                    int moltiplicazione = primoNum * secondoNum;
                     out.println(moltiplicazione);
-                } else if (operatore.equals(4)) {
-                    int divisione = Integer.parseInt(primoNum) / Integer.parseInt(secondoNum);
+                } else if (operatore.equals("4")) {
+                    int divisione = primoNum / secondoNum;
                     out.println(divisione);
                 }
 
